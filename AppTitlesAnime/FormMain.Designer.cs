@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             btnShowTypes = new Button();
+            btnShowGenre = new Button();
+            btnShowStatus = new Button();
             SuspendLayout();
             // 
             // btnShowTypes
@@ -42,12 +44,36 @@
             btnShowTypes.UseVisualStyleBackColor = true;
             btnShowTypes.Click += BtnShowTypes_Click;
             // 
+            // btnShowGenre
+            // 
+            btnShowGenre.AutoSize = true;
+            btnShowGenre.Location = new Point(12, 68);
+            btnShowGenre.Name = "btnShowGenre";
+            btnShowGenre.Size = new Size(329, 35);
+            btnShowGenre.TabIndex = 1;
+            btnShowGenre.Text = "Отобразить список \"Жанры аниме\"";
+            btnShowGenre.UseVisualStyleBackColor = true;
+            btnShowGenre.Click += BtnShowGenre_Click;
+            // 
+            // btnShowStatus
+            // 
+            btnShowStatus.AutoSize = true;
+            btnShowStatus.Location = new Point(12, 123);
+            btnShowStatus.Name = "btnShowStatus";
+            btnShowStatus.Size = new Size(324, 35);
+            btnShowStatus.TabIndex = 2;
+            btnShowStatus.Text = "Отобразить список \"Статус аниме\"";
+            btnShowStatus.UseVisualStyleBackColor = true;
+            btnShowStatus.Click += BtnShowStatus_Click;
+            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(845, 409);
+            Controls.Add(btnShowStatus);
+            Controls.Add(btnShowGenre);
             Controls.Add(btnShowTypes);
             Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             Margin = new Padding(5);
@@ -60,5 +86,7 @@
         #endregion
 
         private Button btnShowTypes;
+        private Button btnShowGenre;
+        private Button btnShowStatus;
     }
 }
