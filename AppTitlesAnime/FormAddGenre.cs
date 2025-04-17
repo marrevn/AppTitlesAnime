@@ -35,16 +35,18 @@ namespace AppTitlesAnime
                 btnSaveChanges.Enabled = false;
                 return;
             }
+            string newGenreAnime = textBoxGenreName.Text;
+
+            bool exits = db.Genres.Any(t => t.GenreName.ToLower() == newGenreAnime.ToLower());
 
             // Проверка на уникальность значения 
-            if (db.Genres.Local.Any(s => s.GenreName.Equals(textBoxGenreName.Text)))
+            if (exits)
             {
-                errorProvider1.SetError(textBoxGenreName, "Такой статус уже существует");
                 btnSaveChanges.Enabled = false;
+                errorProvider1.SetError(textBoxGenreName, "Такой статус уже существует");
             }
             else
             {
-                errorProvider1.Clear();
                 btnSaveChanges.Enabled = true;
             }
         }

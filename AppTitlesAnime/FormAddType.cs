@@ -1,10 +1,17 @@
-﻿namespace AppTitlesAnime
+﻿using System.Windows.Forms;
+using Microsoft.EntityFrameworkCore;
+using AppContext = AppTitlesAnime.Models.AppContext;
+
+namespace AppTitlesAnime
 {
     public partial class FormAddType : Form
     {
+        private AppContext db; // Добавляем поле для контекста базы данных
         public FormAddType()
         {
             InitializeComponent();
+            this.db = new AppContext(); // Инициализация контекста в конструкторе
+            this.db.Types.Load(); // Загрузка данных
         }
 
         private void TextBoxTypeName_Validating(object sender, System.ComponentModel.CancelEventArgs e)
@@ -31,6 +38,21 @@
             else
             {
                 errorProvider.Clear();
+                btnSaveChanges.Enabled = true;
+            }
+
+            string newTypesAnime = textBoxTypeName.Text;
+
+            bool exits = db.Types.Any(t => t.TypeName.ToLower() == newTypesAnime.ToLower());
+
+            // Проверка на уникальность значения 
+            if (exits)
+            {
+                btnSaveChanges.Enabled = false;
+                errorProvider.SetError(textBoxTypeName, "Такой статус уже существует");
+            }
+            else
+            {
                 btnSaveChanges.Enabled = true;
             }
         }

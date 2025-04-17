@@ -37,9 +37,12 @@ namespace AppTitlesAnime
                 btnSaveChanges.Enabled = false;
                 return;
             }
+            string newStatusAnime = textBoxStatusName.Text;
 
-            // Проверка на уникальность значения (используем Any для поиска совпадений)
-            if (db.Statuses.Local.Any(s => s.StatusName.Equals(textBoxStatusName.Text)))
+            bool exits = db.Statuses.Any(t => t.StatusName.ToLower() == newStatusAnime.ToLower());
+
+            // Проверка на уникальность значения 
+            if (exits)
             {
                 errorProvider1.SetError(textBoxStatusName, "Такой статус уже существует");
                 btnSaveChanges.Enabled = false;
