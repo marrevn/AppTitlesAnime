@@ -72,6 +72,7 @@
             btnUpdateStatus.TabIndex = 1;
             btnUpdateStatus.Text = "Редактировать";
             btnUpdateStatus.UseVisualStyleBackColor = true;
+            btnUpdateStatus.Click += BtnUpdateStatus_Click;
             // 
             // btnDeleteStatus
             // 
@@ -82,6 +83,7 @@
             btnDeleteStatus.TabIndex = 2;
             btnDeleteStatus.Text = "Удалить";
             btnDeleteStatus.UseVisualStyleBackColor = true;
+            btnDeleteStatus.Click += BtnDeleteStatus_Click;
             // 
             // dataGridViewStatus
             // 
