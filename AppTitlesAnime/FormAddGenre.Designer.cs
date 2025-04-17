@@ -28,14 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             flowLayoutPanelBotton = new FlowLayoutPanel();
             btnSaveChanges = new Button();
             btnCancel = new Button();
             panelFill = new Panel();
             textBoxGenreName = new TextBox();
             labelGenreName = new Label();
+            errorProvider1 = new ErrorProvider(components);
             flowLayoutPanelBotton.SuspendLayout();
             panelFill.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // flowLayoutPanelBotton
@@ -46,13 +49,14 @@
             flowLayoutPanelBotton.Dock = DockStyle.Bottom;
             flowLayoutPanelBotton.Location = new Point(0, 85);
             flowLayoutPanelBotton.Name = "flowLayoutPanelBotton";
-            flowLayoutPanelBotton.Padding = new Padding(10);
+            flowLayoutPanelBotton.Padding = new Padding(10, 10, 20, 10);
             flowLayoutPanelBotton.Size = new Size(434, 61);
             flowLayoutPanelBotton.TabIndex = 1;
             // 
             // btnSaveChanges
             // 
             btnSaveChanges.AutoSize = true;
+            btnSaveChanges.DialogResult = DialogResult.OK;
             btnSaveChanges.Location = new Point(13, 13);
             btnSaveChanges.Name = "btnSaveChanges";
             btnSaveChanges.Size = new Size(115, 35);
@@ -63,6 +67,7 @@
             // btnCancel
             // 
             btnCancel.AutoSize = true;
+            btnCancel.DialogResult = DialogResult.Cancel;
             btnCancel.Location = new Point(134, 13);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(88, 35);
@@ -77,17 +82,19 @@
             panelFill.Dock = DockStyle.Fill;
             panelFill.Location = new Point(0, 0);
             panelFill.Name = "panelFill";
-            panelFill.Padding = new Padding(10);
+            panelFill.Padding = new Padding(10, 10, 20, 10);
             panelFill.Size = new Size(434, 85);
-            panelFill.TabIndex = 2;
+            panelFill.TabIndex = 0;
             // 
             // textBoxGenreName
             // 
             textBoxGenreName.Dock = DockStyle.Top;
             textBoxGenreName.Location = new Point(10, 35);
             textBoxGenreName.Name = "textBoxGenreName";
-            textBoxGenreName.Size = new Size(414, 33);
+            textBoxGenreName.Size = new Size(404, 33);
             textBoxGenreName.TabIndex = 1;
+            textBoxGenreName.TextChanged += TextBoxGenreName_TextChanged;
+            textBoxGenreName.Validating += TextBoxGenreName_Validating;
             // 
             // labelGenreName
             // 
@@ -98,6 +105,10 @@
             labelGenreName.Size = new Size(120, 25);
             labelGenreName.TabIndex = 0;
             labelGenreName.Text = "Жанр аниме";
+            // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
             // 
             // FormAddGenre
             // 
@@ -115,6 +126,7 @@
             flowLayoutPanelBotton.PerformLayout();
             panelFill.ResumeLayout(false);
             panelFill.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -125,6 +137,7 @@
         private Button btnSaveChanges;
         private Button btnCancel;
         private Label labelGenreName;
-        private TextBox textBoxGenreName;
+        protected internal TextBox textBoxGenreName;
+        private ErrorProvider errorProvider1;
     }
 }

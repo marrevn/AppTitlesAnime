@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AppTitlesAnime.Models;
 using Microsoft.EntityFrameworkCore;
 using AppContext = AppTitlesAnime.Models.AppContext;
 
@@ -43,8 +44,21 @@ namespace AppTitlesAnime
 
         private void BtnAddStatus_Click(object sender, EventArgs e)
         {
-            FormAddStatus formAddStatus = new FormAddStatus();
-            formAddStatus.ShowDialog();
+            FormAddStatus formAddStatus = new();
+            DialogResult result = formAddStatus.ShowDialog(this);
+
+            if (result == DialogResult.Cancel)
+                return;
+
+            Status status = new Status();
+            status.StatusName=formAddStatus.textBoxStatusName.Text;
+
+            db.Statuses.Add(status);
+            db.SaveChanges();
+
+            MessageBox.Show("Новый объект добавлен");
+
+            this.dataGridViewStatus.DataSource = this.db.Statuses.Local.OrderBy(o => o.StatusName).ToList();
         }
     }
 }

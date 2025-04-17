@@ -28,14 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             flowLayoutPanelBotton = new FlowLayoutPanel();
             btnSaveChanges = new Button();
             btnCancel = new Button();
             panelFill = new Panel();
             textBoxStatusName = new TextBox();
             labelStatusName = new Label();
+            errorProvider1 = new ErrorProvider(components);
             flowLayoutPanelBotton.SuspendLayout();
             panelFill.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // flowLayoutPanelBotton
@@ -46,13 +49,14 @@
             flowLayoutPanelBotton.Dock = DockStyle.Bottom;
             flowLayoutPanelBotton.Location = new Point(0, 85);
             flowLayoutPanelBotton.Name = "flowLayoutPanelBotton";
-            flowLayoutPanelBotton.Padding = new Padding(10);
+            flowLayoutPanelBotton.Padding = new Padding(10, 10, 20, 10);
             flowLayoutPanelBotton.Size = new Size(434, 61);
             flowLayoutPanelBotton.TabIndex = 1;
             // 
             // btnSaveChanges
             // 
             btnSaveChanges.AutoSize = true;
+            btnSaveChanges.DialogResult = DialogResult.OK;
             btnSaveChanges.Location = new Point(13, 13);
             btnSaveChanges.Name = "btnSaveChanges";
             btnSaveChanges.Size = new Size(115, 35);
@@ -63,6 +67,7 @@
             // btnCancel
             // 
             btnCancel.AutoSize = true;
+            btnCancel.DialogResult = DialogResult.Cancel;
             btnCancel.Location = new Point(134, 13);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(88, 35);
@@ -77,17 +82,19 @@
             panelFill.Dock = DockStyle.Fill;
             panelFill.Location = new Point(0, 0);
             panelFill.Name = "panelFill";
-            panelFill.Padding = new Padding(10);
+            panelFill.Padding = new Padding(10, 10, 20, 10);
             panelFill.Size = new Size(434, 85);
-            panelFill.TabIndex = 2;
+            panelFill.TabIndex = 0;
             // 
             // textBoxStatusName
             // 
             textBoxStatusName.Dock = DockStyle.Top;
             textBoxStatusName.Location = new Point(10, 35);
             textBoxStatusName.Name = "textBoxStatusName";
-            textBoxStatusName.Size = new Size(414, 33);
+            textBoxStatusName.Size = new Size(404, 33);
             textBoxStatusName.TabIndex = 1;
+            textBoxStatusName.TextChanged += TextBoxStatusName_TextChanged;
+            textBoxStatusName.Validating += TextBoxStatusName_Validating;
             // 
             // labelStatusName
             // 
@@ -98,6 +105,10 @@
             labelStatusName.Size = new Size(128, 25);
             labelStatusName.TabIndex = 0;
             labelStatusName.Text = "Статус аниме";
+            // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
             // 
             // FormAddStatus
             // 
@@ -116,6 +127,7 @@
             flowLayoutPanelBotton.PerformLayout();
             panelFill.ResumeLayout(false);
             panelFill.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -126,6 +138,7 @@
         private Button btnSaveChanges;
         private Button btnCancel;
         private Label labelStatusName;
-        private TextBox textBoxStatusName;
+        protected internal TextBox textBoxStatusName;
+        private ErrorProvider errorProvider1;
     }
 }
