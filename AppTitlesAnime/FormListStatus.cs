@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using AppTitlesAnime.Models;
 using Microsoft.EntityFrameworkCore;
 using AppContext = AppTitlesAnime.Models.AppContext;
@@ -38,7 +31,6 @@ namespace AppTitlesAnime
         protected override void OnClosing(CancelEventArgs e)   // Метод, вызываемый при закрытии формы
         {
             base.OnClosing(e);
-
             this.db?.Dispose(); // Если db не null, вызываем Dispose()
             this.db = null;// Обнуляем ссылку
         }

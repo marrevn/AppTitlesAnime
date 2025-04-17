@@ -1,5 +1,4 @@
-﻿using System.Windows.Forms;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using AppContext = AppTitlesAnime.Models.AppContext;
 
 namespace AppTitlesAnime
