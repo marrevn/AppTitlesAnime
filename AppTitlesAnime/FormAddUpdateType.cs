@@ -3,10 +3,10 @@ using AppContext = AppTitlesAnime.Models.AppContext;
 
 namespace AppTitlesAnime
 {
-    public partial class FormAddType : Form
+    public partial class FormAddUpdateType : Form
     {
         private AppContext db; // Добавляем поле для контекста базы данных
-        public FormAddType()
+        public FormAddUpdateType()
         {
             InitializeComponent();
             this.db = new AppContext(); // Инициализация контекста в конструкторе
