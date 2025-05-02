@@ -57,7 +57,7 @@
             btnAddGenre.AutoSize = true;
             btnAddGenre.Location = new Point(13, 13);
             btnAddGenre.Name = "btnAddGenre";
-            btnAddGenre.Size = new Size(106, 35);
+            btnAddGenre.Size = new Size(108, 35);
             btnAddGenre.TabIndex = 0;
             btnAddGenre.Text = "Добавить";
             btnAddGenre.UseVisualStyleBackColor = true;
@@ -66,9 +66,9 @@
             // btnUpdateGenre
             // 
             btnUpdateGenre.AutoSize = true;
-            btnUpdateGenre.Location = new Point(125, 13);
+            btnUpdateGenre.Location = new Point(127, 13);
             btnUpdateGenre.Name = "btnUpdateGenre";
-            btnUpdateGenre.Size = new Size(151, 35);
+            btnUpdateGenre.Size = new Size(153, 35);
             btnUpdateGenre.TabIndex = 1;
             btnUpdateGenre.Text = "Редактировать";
             btnUpdateGenre.UseVisualStyleBackColor = true;
@@ -77,7 +77,7 @@
             // btnDeleteGenre
             // 
             btnDeleteGenre.AutoSize = true;
-            btnDeleteGenre.Location = new Point(282, 13);
+            btnDeleteGenre.Location = new Point(286, 13);
             btnDeleteGenre.Name = "btnDeleteGenre";
             btnDeleteGenre.Size = new Size(92, 35);
             btnDeleteGenre.TabIndex = 2;
@@ -120,7 +120,9 @@
             Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             Margin = new Padding(5);
             Name = "FormListGenre";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Список жанров аниме";
+            WindowState = FormWindowState.Maximized;
             flowLayoutPanelTop.ResumeLayout(false);
             flowLayoutPanelTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewGenre).EndInit();

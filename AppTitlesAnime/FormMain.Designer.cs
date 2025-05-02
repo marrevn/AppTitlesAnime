@@ -41,7 +41,7 @@
             btnShowTypes.AutoSize = true;
             btnShowTypes.Location = new Point(13, 13);
             btnShowTypes.Name = "btnShowTypes";
-            btnShowTypes.Size = new Size(313, 35);
+            btnShowTypes.Size = new Size(317, 35);
             btnShowTypes.TabIndex = 0;
             btnShowTypes.Text = "Отобразить список \"Типы аниме\"";
             btnShowTypes.UseVisualStyleBackColor = true;
@@ -52,7 +52,7 @@
             btnShowGenre.AutoSize = true;
             btnShowGenre.Location = new Point(13, 95);
             btnShowGenre.Name = "btnShowGenre";
-            btnShowGenre.Size = new Size(329, 35);
+            btnShowGenre.Size = new Size(336, 35);
             btnShowGenre.TabIndex = 1;
             btnShowGenre.Text = "Отобразить список \"Жанры аниме\"";
             btnShowGenre.UseVisualStyleBackColor = true;
@@ -63,7 +63,7 @@
             btnShowStatus.AutoSize = true;
             btnShowStatus.Location = new Point(13, 136);
             btnShowStatus.Name = "btnShowStatus";
-            btnShowStatus.Size = new Size(324, 35);
+            btnShowStatus.Size = new Size(329, 35);
             btnShowStatus.TabIndex = 2;
             btnShowStatus.Text = "Отобразить список \"Статус аниме\"";
             btnShowStatus.UseVisualStyleBackColor = true;
@@ -104,6 +104,7 @@
             Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             Margin = new Padding(5);
             Name = "FormMain";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Главная форма";
             flowLayoutPanel1.ResumeLayout(false);
             flowLayoutPanel1.PerformLayout();

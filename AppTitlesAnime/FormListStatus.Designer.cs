@@ -57,7 +57,7 @@
             btnAddStatus.AutoSize = true;
             btnAddStatus.Location = new Point(13, 13);
             btnAddStatus.Name = "btnAddStatus";
-            btnAddStatus.Size = new Size(106, 35);
+            btnAddStatus.Size = new Size(108, 35);
             btnAddStatus.TabIndex = 0;
             btnAddStatus.Text = "Добавить";
             btnAddStatus.UseVisualStyleBackColor = true;
@@ -66,9 +66,9 @@
             // btnUpdateStatus
             // 
             btnUpdateStatus.AutoSize = true;
-            btnUpdateStatus.Location = new Point(125, 13);
+            btnUpdateStatus.Location = new Point(127, 13);
             btnUpdateStatus.Name = "btnUpdateStatus";
-            btnUpdateStatus.Size = new Size(151, 35);
+            btnUpdateStatus.Size = new Size(153, 35);
             btnUpdateStatus.TabIndex = 1;
             btnUpdateStatus.Text = "Редактировать";
             btnUpdateStatus.UseVisualStyleBackColor = true;
@@ -77,7 +77,7 @@
             // btnDeleteStatus
             // 
             btnDeleteStatus.AutoSize = true;
-            btnDeleteStatus.Location = new Point(282, 13);
+            btnDeleteStatus.Location = new Point(286, 13);
             btnDeleteStatus.Name = "btnDeleteStatus";
             btnDeleteStatus.Size = new Size(92, 35);
             btnDeleteStatus.TabIndex = 2;
@@ -120,7 +120,9 @@
             Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             Margin = new Padding(5);
             Name = "FormListStatus";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Список статусов аниме";
+            WindowState = FormWindowState.Maximized;
             flowLayoutPanelTop.ResumeLayout(false);
             flowLayoutPanelTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewStatus).EndInit();

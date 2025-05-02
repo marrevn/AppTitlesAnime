@@ -59,7 +59,7 @@
             btnSaveChanges.DialogResult = DialogResult.OK;
             btnSaveChanges.Location = new Point(13, 13);
             btnSaveChanges.Name = "btnSaveChanges";
-            btnSaveChanges.Size = new Size(115, 35);
+            btnSaveChanges.Size = new Size(116, 35);
             btnSaveChanges.TabIndex = 0;
             btnSaveChanges.Text = "Сохранить";
             btnSaveChanges.UseVisualStyleBackColor = true;
@@ -68,9 +68,9 @@
             // 
             btnCancel.AutoSize = true;
             btnCancel.DialogResult = DialogResult.Cancel;
-            btnCancel.Location = new Point(134, 13);
+            btnCancel.Location = new Point(135, 13);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(88, 35);
+            btnCancel.Size = new Size(89, 35);
             btnCancel.TabIndex = 1;
             btnCancel.Text = "Отмена";
             btnCancel.UseVisualStyleBackColor = true;
@@ -102,7 +102,7 @@
             labelGenreName.Dock = DockStyle.Top;
             labelGenreName.Location = new Point(10, 10);
             labelGenreName.Name = "labelGenreName";
-            labelGenreName.Size = new Size(120, 25);
+            labelGenreName.Size = new Size(123, 25);
             labelGenreName.TabIndex = 0;
             labelGenreName.Text = "Жанр аниме";
             // 
@@ -121,6 +121,7 @@
             Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             Margin = new Padding(5);
             Name = "FormAddGenre";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Информация о жанре аниме";
             flowLayoutPanelBotton.ResumeLayout(false);
             flowLayoutPanelBotton.PerformLayout();

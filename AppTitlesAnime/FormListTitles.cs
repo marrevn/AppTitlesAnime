@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using AppTitlesAnime.Models;
 using Microsoft.EntityFrameworkCore;
 using AppContext = AppTitlesAnime.Models.AppContext;
+using Type = AppTitlesAnime.Models.Type;
 
 namespace AppTitlesAnime
 {
@@ -62,6 +63,54 @@ namespace AppTitlesAnime
 
         private void BtnAddTitle_Click(object sender, EventArgs e)
         {
+            FormAddUpdateTitles formAddUpdateTitle = new FormAddUpdateTitles();
+
+
+            this.db.Types.Load();
+            List<Type> types = this.db.Types.Local.OrderBy(o => o.TypeName).ToList();
+
+            formAddUpdateTitle.comboBoxType.DataSource = types;
+            formAddUpdateTitle.comboBoxType.DisplayMember = "TypeName";
+            formAddUpdateTitle.comboBoxType.ValueMember = "Id";
+
+            DialogResult result = formAddUpdateTitle.ShowDialog();
+
+            if (result == DialogResult.Cancel)
+                return;
+
+            AnimeTitle animeTitle = new()
+            {
+                OriginalName = formAddUpdateTitle.textBoxOriginalName.Text,
+                Name = formAddUpdateTitle.textBoxName.Text,
+                CountSeries = Convert.ToInt16(formAddUpdateTitle.numericUpDowncountSeries.Value),
+                Duration = Convert.ToInt16(formAddUpdateTitle.numericUpDownDuration.Value),
+                Studio = formAddUpdateTitle.textBoxStudio.Text,
+                Description = formAddUpdateTitle.textBoxDescription.Text,
+
+            };
+
+            Type type = (Type)formAddUpdateTitle.comboBoxType.SelectedItem!;
+            animeTitle.IdType = type.Id;
+
+            db.AnimeTitles.Add(animeTitle);
+            db.SaveChanges();
+
+            MessageBox.Show("Новый объект добавлен", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            this.dataGridViewTitles.DataSource = this.db.AnimeTitles
+                .Include(i => i.Type)
+                .Select(i => new
+                {
+                    i.Id,
+                    i.Type.TypeName,
+                    i.OriginalName,
+                    i.Name,
+                    i.CountSeries,
+                    i.Duration,
+                    i.Studio
+                })
+                .OrderBy(i => i.TypeName)
+                .ThenBy(i => i.OriginalName).ToList();
 
         }
     }

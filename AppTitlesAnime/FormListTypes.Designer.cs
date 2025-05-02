@@ -58,7 +58,7 @@
             btnAddType.AutoSize = true;
             btnAddType.Location = new Point(13, 13);
             btnAddType.Name = "btnAddType";
-            btnAddType.Size = new Size(106, 35);
+            btnAddType.Size = new Size(108, 35);
             btnAddType.TabIndex = 0;
             btnAddType.Text = "Добавить";
             btnAddType.UseVisualStyleBackColor = true;
@@ -67,9 +67,9 @@
             // btnUpdateType
             // 
             btnUpdateType.AutoSize = true;
-            btnUpdateType.Location = new Point(125, 13);
+            btnUpdateType.Location = new Point(127, 13);
             btnUpdateType.Name = "btnUpdateType";
-            btnUpdateType.Size = new Size(151, 35);
+            btnUpdateType.Size = new Size(153, 35);
             btnUpdateType.TabIndex = 1;
             btnUpdateType.Text = "Редактировать";
             btnUpdateType.UseVisualStyleBackColor = true;
@@ -78,7 +78,7 @@
             // btnDeleteType
             // 
             btnDeleteType.AutoSize = true;
-            btnDeleteType.Location = new Point(282, 13);
+            btnDeleteType.Location = new Point(286, 13);
             btnDeleteType.Name = "btnDeleteType";
             btnDeleteType.Size = new Size(92, 35);
             btnDeleteType.TabIndex = 2;
@@ -121,7 +121,9 @@
             Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             Margin = new Padding(5);
             Name = "FormListTypes";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Список типов аниме";
+            WindowState = FormWindowState.Maximized;
             flowLayoutPanelTop.ResumeLayout(false);
             flowLayoutPanelTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewTypes).EndInit();

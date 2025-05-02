@@ -58,7 +58,7 @@
             btnAddTitle.AutoSize = true;
             btnAddTitle.Location = new Point(13, 13);
             btnAddTitle.Name = "btnAddTitle";
-            btnAddTitle.Size = new Size(106, 35);
+            btnAddTitle.Size = new Size(108, 35);
             btnAddTitle.TabIndex = 0;
             btnAddTitle.Text = "Добавить";
             btnAddTitle.UseVisualStyleBackColor = true;
@@ -67,9 +67,9 @@
             // btnUpdateTitle
             // 
             btnUpdateTitle.AutoSize = true;
-            btnUpdateTitle.Location = new Point(125, 13);
+            btnUpdateTitle.Location = new Point(127, 13);
             btnUpdateTitle.Name = "btnUpdateTitle";
-            btnUpdateTitle.Size = new Size(151, 35);
+            btnUpdateTitle.Size = new Size(153, 35);
             btnUpdateTitle.TabIndex = 1;
             btnUpdateTitle.Text = "Редактировать";
             btnUpdateTitle.UseVisualStyleBackColor = true;
@@ -77,7 +77,7 @@
             // btnDeleteTitle
             // 
             btnDeleteTitle.AutoSize = true;
-            btnDeleteTitle.Location = new Point(282, 13);
+            btnDeleteTitle.Location = new Point(286, 13);
             btnDeleteTitle.Name = "btnDeleteTitle";
             btnDeleteTitle.Size = new Size(92, 35);
             btnDeleteTitle.TabIndex = 2;
@@ -120,7 +120,9 @@
             Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             Margin = new Padding(5);
             Name = "FormListTitles";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Список тайтлов аниме";
+            WindowState = FormWindowState.Maximized;
             flowLayoutPanelTop.ResumeLayout(false);
             flowLayoutPanelTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewTitles).EndInit();
