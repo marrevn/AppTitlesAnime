@@ -78,12 +78,12 @@
             // 
             // textBoxDescription
             // 
-            textBoxDescription.Dock = DockStyle.Top;
+            textBoxDescription.Dock = DockStyle.Fill;
             textBoxDescription.Location = new Point(10, 383);
             textBoxDescription.Multiline = true;
             textBoxDescription.Name = "textBoxDescription";
             textBoxDescription.ScrollBars = ScrollBars.Vertical;
-            textBoxDescription.Size = new Size(854, 130);
+            textBoxDescription.Size = new Size(854, 147);
             textBoxDescription.TabIndex = 16;
             // 
             // labelDescription
@@ -118,6 +118,7 @@
             // 
             numericUpDownDuration.Dock = DockStyle.Top;
             numericUpDownDuration.Location = new Point(10, 267);
+            numericUpDownDuration.Maximum = new decimal(new int[] { 1440, 0, 0, 0 });
             numericUpDownDuration.Name = "numericUpDownDuration";
             numericUpDownDuration.Size = new Size(854, 33);
             numericUpDownDuration.TabIndex = 12;
@@ -136,6 +137,7 @@
             // 
             numericUpDowncountSeries.Dock = DockStyle.Top;
             numericUpDowncountSeries.Location = new Point(10, 209);
+            numericUpDowncountSeries.Maximum = new decimal(new int[] { 50000, 0, 0, 0 });
             numericUpDowncountSeries.Name = "numericUpDowncountSeries";
             numericUpDowncountSeries.Size = new Size(854, 33);
             numericUpDowncountSeries.TabIndex = 10;
@@ -152,6 +154,7 @@
             // 
             // comboBoxType
             // 
+            comboBoxType.BackColor = Color.White;
             comboBoxType.Dock = DockStyle.Top;
             comboBoxType.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxType.FormattingEnabled = true;
