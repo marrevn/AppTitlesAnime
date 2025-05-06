@@ -49,7 +49,7 @@
             flowLayoutPanelTop.Location = new Point(0, 0);
             flowLayoutPanelTop.Name = "flowLayoutPanelTop";
             flowLayoutPanelTop.Padding = new Padding(10);
-            flowLayoutPanelTop.Size = new Size(873, 61);
+            flowLayoutPanelTop.Size = new Size(934, 61);
             flowLayoutPanelTop.TabIndex = 0;
             // 
             // btnAddStatus
@@ -57,7 +57,7 @@
             btnAddStatus.AutoSize = true;
             btnAddStatus.Location = new Point(13, 13);
             btnAddStatus.Name = "btnAddStatus";
-            btnAddStatus.Size = new Size(106, 35);
+            btnAddStatus.Size = new Size(108, 35);
             btnAddStatus.TabIndex = 0;
             btnAddStatus.Text = "Добавить";
             btnAddStatus.UseVisualStyleBackColor = true;
@@ -66,31 +66,37 @@
             // btnUpdateStatus
             // 
             btnUpdateStatus.AutoSize = true;
-            btnUpdateStatus.Location = new Point(125, 13);
+            btnUpdateStatus.Location = new Point(127, 13);
             btnUpdateStatus.Name = "btnUpdateStatus";
-            btnUpdateStatus.Size = new Size(151, 35);
+            btnUpdateStatus.Size = new Size(153, 35);
             btnUpdateStatus.TabIndex = 1;
             btnUpdateStatus.Text = "Редактировать";
             btnUpdateStatus.UseVisualStyleBackColor = true;
+            btnUpdateStatus.Click += BtnUpdateStatus_Click;
             // 
             // btnDeleteStatus
             // 
             btnDeleteStatus.AutoSize = true;
-            btnDeleteStatus.Location = new Point(282, 13);
+            btnDeleteStatus.Location = new Point(286, 13);
             btnDeleteStatus.Name = "btnDeleteStatus";
             btnDeleteStatus.Size = new Size(92, 35);
             btnDeleteStatus.TabIndex = 2;
             btnDeleteStatus.Text = "Удалить";
             btnDeleteStatus.UseVisualStyleBackColor = true;
+            btnDeleteStatus.Click += BtnDeleteStatus_Click;
             // 
             // dataGridViewStatus
             // 
+            dataGridViewStatus.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewStatus.BackgroundColor = Color.White;
             dataGridViewStatus.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewStatus.Dock = DockStyle.Fill;
             dataGridViewStatus.Location = new Point(10, 10);
+            dataGridViewStatus.MultiSelect = false;
             dataGridViewStatus.Name = "dataGridViewStatus";
-            dataGridViewStatus.Size = new Size(853, 456);
+            dataGridViewStatus.ReadOnly = true;
+            dataGridViewStatus.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewStatus.Size = new Size(914, 430);
             dataGridViewStatus.TabIndex = 1;
             // 
             // panelFill
@@ -100,7 +106,7 @@
             panelFill.Location = new Point(0, 61);
             panelFill.Name = "panelFill";
             panelFill.Padding = new Padding(10);
-            panelFill.Size = new Size(873, 476);
+            panelFill.Size = new Size(934, 450);
             panelFill.TabIndex = 2;
             // 
             // FormListStatus
@@ -108,13 +114,15 @@
             AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(873, 537);
+            ClientSize = new Size(934, 511);
             Controls.Add(panelFill);
             Controls.Add(flowLayoutPanelTop);
             Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             Margin = new Padding(5);
             Name = "FormListStatus";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Список статусов аниме";
+            WindowState = FormWindowState.Maximized;
             flowLayoutPanelTop.ResumeLayout(false);
             flowLayoutPanelTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewStatus).EndInit();

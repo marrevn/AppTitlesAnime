@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel;
-using AppTitlesAnime.Models;
 using Microsoft.EntityFrameworkCore;
 using AppContext = AppTitlesAnime.Models.AppContext;
 using Type = AppTitlesAnime.Models.Type;
@@ -40,7 +39,7 @@ namespace AppTitlesAnime
 
         private void BtnAddType_Click(object sender, EventArgs e)
         {
-            FormAddType formAddtype = new FormAddType();
+            FormAddUpdateType formAddtype = new FormAddUpdateType();
             DialogResult result = formAddtype.ShowDialog(this);
 
             if (result == DialogResult.Cancel)
@@ -72,7 +71,7 @@ namespace AppTitlesAnime
                 return;
 
             Type type = db.Types.Find(id);
-            FormAddType formAddType = new();
+            FormAddUpdateType formAddType = new();
             formAddType.textBoxTypeName.Text = type.TypeName;
 
             DialogResult result = formAddType.ShowDialog(this);

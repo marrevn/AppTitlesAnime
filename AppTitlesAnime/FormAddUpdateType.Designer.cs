@@ -1,6 +1,6 @@
 ﻿namespace AppTitlesAnime
 {
-    partial class FormAddType
+    partial class FormAddUpdateType
     {
         /// <summary>
         /// Required designer variable.
@@ -59,7 +59,7 @@
             btnSaveChanges.DialogResult = DialogResult.OK;
             btnSaveChanges.Location = new Point(13, 13);
             btnSaveChanges.Name = "btnSaveChanges";
-            btnSaveChanges.Size = new Size(115, 35);
+            btnSaveChanges.Size = new Size(116, 35);
             btnSaveChanges.TabIndex = 2;
             btnSaveChanges.Text = "Сохранить";
             btnSaveChanges.UseVisualStyleBackColor = true;
@@ -68,9 +68,9 @@
             // 
             btnCancel.AutoSize = true;
             btnCancel.DialogResult = DialogResult.Cancel;
-            btnCancel.Location = new Point(134, 13);
+            btnCancel.Location = new Point(135, 13);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(88, 35);
+            btnCancel.Size = new Size(89, 35);
             btnCancel.TabIndex = 3;
             btnCancel.Text = "Отмена";
             btnCancel.UseVisualStyleBackColor = true;
@@ -110,7 +110,7 @@
             // 
             errorProvider.ContainerControl = this;
             // 
-            // FormAddType
+            // FormAddUpdateType
             // 
             AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -120,7 +120,8 @@
             Controls.Add(flowLayoutPanelBottom);
             Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             Margin = new Padding(5);
-            Name = "FormAddType";
+            Name = "FormAddUpdateType";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Информация о типе аниме";
             flowLayoutPanelBottom.ResumeLayout(false);
             flowLayoutPanelBottom.PerformLayout();
