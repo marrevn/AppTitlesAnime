@@ -84,6 +84,7 @@
             btnDeleteTitle.TabIndex = 2;
             btnDeleteTitle.Text = "Удалить";
             btnDeleteTitle.UseVisualStyleBackColor = true;
+            btnDeleteTitle.Click += BtnDeleteTitle_Click;
             // 
             // dataGridViewTitles
             // 

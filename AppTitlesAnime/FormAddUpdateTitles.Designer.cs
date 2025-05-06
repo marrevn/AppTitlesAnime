@@ -110,7 +110,7 @@
             labelStudio.Dock = DockStyle.Top;
             labelStudio.Location = new Point(10, 300);
             labelStudio.Name = "labelStudio";
-            labelStudio.Size = new Size(73, 25);
+            labelStudio.Size = new Size(72, 25);
             labelStudio.TabIndex = 13;
             labelStudio.Text = "Студия";
             // 
@@ -129,7 +129,7 @@
             labelDuration.Dock = DockStyle.Top;
             labelDuration.Location = new Point(10, 242);
             labelDuration.Name = "labelDuration";
-            labelDuration.Size = new Size(303, 25);
+            labelDuration.Size = new Size(296, 25);
             labelDuration.TabIndex = 11;
             labelDuration.Text = "Продолжительность серии, мин.";
             // 
@@ -148,7 +148,7 @@
             labelCountSeries.Dock = DockStyle.Top;
             labelCountSeries.Location = new Point(10, 184);
             labelCountSeries.Name = "labelCountSeries";
-            labelCountSeries.Size = new Size(174, 25);
+            labelCountSeries.Size = new Size(171, 25);
             labelCountSeries.TabIndex = 9;
             labelCountSeries.Text = "Количество серий";
             // 
@@ -187,7 +187,7 @@
             labelName.Dock = DockStyle.Top;
             labelName.Location = new Point(10, 68);
             labelName.Name = "labelName";
-            labelName.Size = new Size(112, 25);
+            labelName.Size = new Size(109, 25);
             labelName.TabIndex = 3;
             labelName.Text = "Имя аниме";
             // 
@@ -239,7 +239,7 @@
             labelOriginalName.Dock = DockStyle.Top;
             labelOriginalName.Location = new Point(10, 10);
             labelOriginalName.Name = "labelOriginalName";
-            labelOriginalName.Size = new Size(181, 25);
+            labelOriginalName.Size = new Size(178, 25);
             labelOriginalName.TabIndex = 0;
             labelOriginalName.Text = "Оригинальное имя";
             // 

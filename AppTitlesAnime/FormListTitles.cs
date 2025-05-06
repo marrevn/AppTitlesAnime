@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using AppTitlesAnime.Models;
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using AppTitlesAnime.Models;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.VisualBasic.Devices;
 using AppContext = AppTitlesAnime.Models.AppContext;
 using Type = AppTitlesAnime.Models.Type;
 
@@ -28,20 +20,8 @@ namespace AppTitlesAnime
             base.OnLoad(e);
             this.db = new AppContext();
             this.db.AnimeTitles.Load();
-            this.dataGridViewTitles.DataSource = this.db.AnimeTitles
-                .Include(i => i.Type)
-                .Select(i => new
-                {
-                    i.Id,
-                    i.Type.TypeName,
-                    i.OriginalName,
-                    i.Name,
-                    i.CountSeries,
-                    i.Duration,
-                    i.Studio
-                })
-                .OrderBy(i => i.TypeName)
-                .ThenBy(i => i.OriginalName).ToList();
+            LoadTitlesAnime();
+
 
             //скрытие стобцов
             dataGridViewTitles.Columns["id"].Visible = false;
@@ -99,27 +79,14 @@ namespace AppTitlesAnime
             MessageBox.Show("Новый объект добавлен", "",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            this.dataGridViewTitles.DataSource = this.db.AnimeTitles
-                .Include(i => i.Type)
-                .Select(i => new
-                {
-                    i.Id,
-                    i.Type.TypeName,
-                    i.OriginalName,
-                    i.Name,
-                    i.CountSeries,
-                    i.Duration,
-                    i.Studio
-                })
-                .OrderBy(i => i.TypeName)
-                .ThenBy(i => i.OriginalName).ToList();
+            LoadTitlesAnime();
 
         }
 
         private void BtnUpdateTitle_Click(object sender, EventArgs e)
         {
-            if (dataGridViewTitles.SelectedRows.Count == 0) 
-                 return;
+            if (dataGridViewTitles.SelectedRows.Count == 0)
+                return;
 
             int index = dataGridViewTitles.SelectedRows[0].Index;
             int id = 0;
@@ -150,7 +117,7 @@ namespace AppTitlesAnime
 
             DialogResult result = formAddUpdateTitle.ShowDialog();
 
-            if(result == DialogResult.Cancel)
+            if (result == DialogResult.Cancel)
                 return;
 
             animeTitle.OriginalName = formAddUpdateTitle.textBoxOriginalName.Text;
@@ -170,7 +137,48 @@ namespace AppTitlesAnime
             MessageBox.Show("Объект изменен", "",
               MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+            LoadTitlesAnime();
 
+        }
+
+        private void BtnDeleteTitle_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewTitles.SelectedRows.Count == 0)
+                return;
+
+            DialogResult result = MessageBox.Show(
+                "Вы уверены, что хотите удалить объект? \nВсе связанные данные будут удалены.",
+                "",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+                );
+
+            if (result == DialogResult.No)
+                return;
+
+            int index = dataGridViewTitles.SelectedRows[0].Index;//индекс первой выбранной строчки
+            int id = 0;
+
+            bool converted = Int32.TryParse(dataGridViewTitles[0, index].Value.ToString(), out id);//пробуем преобразовать в тип int и в id запишется идентификаптор
+                                                                                                   // в converted присвоится true
+
+            if (!converted)
+                return;
+
+            AnimeTitle animeTitle = db.AnimeTitles.Find(id)!;//находим по идентификатору строчку в табл
+
+            db.AnimeTitles.Remove(animeTitle);
+            db.SaveChanges();
+
+            MessageBox.Show("Объект удален", "",
+             MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+            LoadTitlesAnime();
+        }
+
+        private void LoadTitlesAnime()
+        {
             this.dataGridViewTitles.DataSource = this.db.AnimeTitles
                 .Include(i => i.Type)
                 .Select(i => new
@@ -185,7 +193,6 @@ namespace AppTitlesAnime
                 })
                 .OrderBy(i => i.TypeName)
                 .ThenBy(i => i.OriginalName).ToList();
-
         }
     }
 }
