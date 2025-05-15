@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             panelFill = new Panel();
-            textBoxDescription = new TextBox();
+            comboBoxStudio = new ComboBox();
             labelDescription = new Label();
-            textBoxStudio = new TextBox();
+            textBoxDescription = new TextBox();
             labelStudio = new Label();
             numericUpDownDuration = new NumericUpDown();
             labelDuration = new Label();
@@ -54,9 +54,9 @@
             // 
             // panelFill
             // 
-            panelFill.Controls.Add(textBoxDescription);
+            panelFill.Controls.Add(comboBoxStudio);
             panelFill.Controls.Add(labelDescription);
-            panelFill.Controls.Add(textBoxStudio);
+            panelFill.Controls.Add(textBoxDescription);
             panelFill.Controls.Add(labelStudio);
             panelFill.Controls.Add(numericUpDownDuration);
             panelFill.Controls.Add(labelDuration);
@@ -73,36 +73,36 @@
             panelFill.Location = new Point(0, 0);
             panelFill.Name = "panelFill";
             panelFill.Padding = new Padding(10, 10, 20, 10);
-            panelFill.Size = new Size(884, 601);
+            panelFill.Size = new Size(884, 738);
             panelFill.TabIndex = 1;
             // 
-            // textBoxDescription
+            // comboBoxStudio
             // 
-            textBoxDescription.Dock = DockStyle.Fill;
-            textBoxDescription.Location = new Point(10, 383);
-            textBoxDescription.Multiline = true;
-            textBoxDescription.Name = "textBoxDescription";
-            textBoxDescription.ScrollBars = ScrollBars.Vertical;
-            textBoxDescription.Size = new Size(854, 147);
-            textBoxDescription.TabIndex = 16;
+            comboBoxStudio.BackColor = Color.White;
+            comboBoxStudio.FormattingEnabled = true;
+            comboBoxStudio.Location = new Point(9, 328);
+            comboBoxStudio.Name = "comboBoxStudio";
+            comboBoxStudio.Size = new Size(855, 33);
+            comboBoxStudio.TabIndex = 18;
             // 
             // labelDescription
             // 
             labelDescription.AutoSize = true;
-            labelDescription.Dock = DockStyle.Top;
-            labelDescription.Location = new Point(10, 358);
+            labelDescription.Location = new Point(10, 364);
             labelDescription.Name = "labelDescription";
             labelDescription.Size = new Size(99, 25);
-            labelDescription.TabIndex = 15;
+            labelDescription.TabIndex = 17;
             labelDescription.Text = "Описание";
             // 
-            // textBoxStudio
+            // textBoxDescription
             // 
-            textBoxStudio.Dock = DockStyle.Top;
-            textBoxStudio.Location = new Point(10, 325);
-            textBoxStudio.Name = "textBoxStudio";
-            textBoxStudio.Size = new Size(854, 33);
-            textBoxStudio.TabIndex = 14;
+            textBoxDescription.Dock = DockStyle.Bottom;
+            textBoxDescription.Location = new Point(10, 402);
+            textBoxDescription.Multiline = true;
+            textBoxDescription.Name = "textBoxDescription";
+            textBoxDescription.ScrollBars = ScrollBars.Vertical;
+            textBoxDescription.Size = new Size(854, 265);
+            textBoxDescription.TabIndex = 16;
             // 
             // labelStudio
             // 
@@ -197,7 +197,7 @@
             flowLayoutPanelBottom.Controls.Add(btnSaveChanges);
             flowLayoutPanelBottom.Controls.Add(btnCancel);
             flowLayoutPanelBottom.Dock = DockStyle.Bottom;
-            flowLayoutPanelBottom.Location = new Point(10, 530);
+            flowLayoutPanelBottom.Location = new Point(10, 667);
             flowLayoutPanelBottom.Name = "flowLayoutPanelBottom";
             flowLayoutPanelBottom.Padding = new Padding(10, 10, 20, 10);
             flowLayoutPanelBottom.Size = new Size(854, 61);
@@ -248,7 +248,7 @@
             AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(884, 601);
+            ClientSize = new Size(884, 738);
             Controls.Add(panelFill);
             Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             Margin = new Padding(5);
@@ -279,7 +279,7 @@
         private Label labelName;
         protected internal TextBox textBoxDescription;
         private Label labelDescription;
-        protected internal TextBox textBoxStudio;
+        protected internal ComboBox comboBoxStudio;
         private Label labelStudio;
         protected internal ComboBox comboBoxType;
         protected internal NumericUpDown numericUpDowncountSeries;
